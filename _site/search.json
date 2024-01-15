@@ -25,7 +25,7 @@
     "href": "index.html",
     "title": "Geirs-blog",
     "section": "",
-    "text": "Experimenting with AI\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nGeir Freysson\n\n\n\n\n\n\n\n\n\n\n\n\nExperimenting with AI\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nGeir Freysson\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJan 4, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "Predicting outcomes for passengers on the Titanic with TensorFlow\n\n\n\n\n\n\nai\n\n\ncode\n\n\ntensorflow\n\n\nkeras\n\n\n\n\n\n\n\n\n\nJan 15, 2024\n\n\nGeir Freysson\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/notebook-post/index.html",
@@ -33,5 +33,19 @@
     "title": "Experimenting with AI",
     "section": "",
     "text": "In this post we will create a basic neural network.\n\na = 2\nb = 3\na + b\n\n5"
+  },
+  {
+    "objectID": "posts/15-jan-2024-titanic/index.html",
+    "href": "posts/15-jan-2024-titanic/index.html",
+    "title": "Predicting outcomes for passengers on the Titanic with TensorFlow",
+    "section": "",
+    "text": "The passenger list on the Titanic is a classic dataset for machine learning, so I thought it was a fitting way to start this self-documentation of AI experiements.\nIt’s a bit morbid (it includes passenger names!) but it’s a dataset made classic by the Kaggle data science competition platform, so we’ll start with that."
+  },
+  {
+    "objectID": "posts/15-jan-2024-titanic/index.html#import-and-explore",
+    "href": "posts/15-jan-2024-titanic/index.html#import-and-explore",
+    "title": "Predicting outcomes for passengers on the Titanic with TensorFlow",
+    "section": "Import and explore",
+    "text": "Import and explore\nFirst, we import pandas and explore the data.\n\nimport pandas as pd\ndata = pd.read_csv('titanic.csv')\ndata.head()\n\n\n\n\n\n\n\n\nPassengerId\nSurvived\nPclass\nName\nSex\nAge\nSibSp\nParch\nTicket\nFare\nCabin\nEmbarked\n\n\n\n\n0\n1\n0\n3\nBraund, Mr. Owen Harris\nmale\n22.0\n1\n0\nA/5 21171\n7.2500\nNaN\nS\n\n\n1\n2\n1\n1\nCumings, Mrs. John Bradley (Florence Briggs Th...\nfemale\n38.0\n1\n0\nPC 17599\n71.2833\nC85\nC\n\n\n2\n3\n1\n3\nHeikkinen, Miss. Laina\nfemale\n26.0\n0\n0\nSTON/O2. 3101282\n7.9250\nNaN\nS\n\n\n3\n4\n1\n1\nFutrelle, Mrs. Jacques Heath (Lily May Peel)\nfemale\n35.0\n1\n0\n113803\n53.1000\nC123\nS\n\n\n4\n5\n0\n3\nAllen, Mr. William Henry\nmale\n35.0\n0\n0\n373450\n8.0500\nNaN\nS\n\n\n\n\n\n\n\n\ndata.describe()\n\n\n\n\n\n\n\n\nPassengerId\nSurvived\nPclass\nAge\nSibSp\nParch\nFare\n\n\n\n\ncount\n891.000000\n891.000000\n891.000000\n714.000000\n891.000000\n891.000000\n891.000000\n\n\nmean\n446.000000\n0.383838\n2.308642\n29.699118\n0.523008\n0.381594\n32.204208\n\n\nstd\n257.353842\n0.486592\n0.836071\n14.526497\n1.102743\n0.806057\n49.693429\n\n\nmin\n1.000000\n0.000000\n1.000000\n0.420000\n0.000000\n0.000000\n0.000000\n\n\n25%\n223.500000\n0.000000\n2.000000\n20.125000\n0.000000\n0.000000\n7.910400\n\n\n50%\n446.000000\n0.000000\n3.000000\n28.000000\n0.000000\n0.000000\n14.454200\n\n\n75%\n668.500000\n1.000000\n3.000000\n38.000000\n1.000000\n0.000000\n31.000000\n\n\nmax\n891.000000\n1.000000\n3.000000\n80.000000\n8.000000\n6.000000\n512.329200"
   }
 ]
