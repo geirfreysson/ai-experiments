@@ -3,6 +3,9 @@ project:
 
 website:
   title: "AI experiments"
+  google-analytics:
+    tracking-id: "G-B8P88P732Y"
+    anonymize-ip: false
   navbar:
     right:
       - about.qmd
