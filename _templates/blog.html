@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Template</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+        .blog-date {
+            opacity: 0.8;
+            margin-bottom:8px;
+            --tw-text-opacity: 1;
+            color: rgb(100 116 139 / var(--tw-text-opacity));
+            line-height: 1.75em;
+        }
+        .blog-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            line-height: 1.75rem
+        }
+        .blog-meta {
+            color: #6c757d;
+            margin-bottom: 10px;
+        }
+        .sidebar {
+            padding-right: 0px;
+            background-color: #ffffff;
+            border-radius: 8px;
+        }
+        .sidebar h5 {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        nav.navbar {
+            border: none;
+            box-shadow: none !important;
+            background-color: transparent; /* Optional: Set to transparent or any color you prefer */
+        }
+        .navbar-brand {
+            font-weight: 600;
+        }
+        .nav-link {
+            color: #6c757d;
+        }
+        .nav-link:hover {
+            color: #000;
+        }
+        .blog-post + hr {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            border-top: 1px solid #d6d8db;
+            opacity: 0.4;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <span>Geir's notes</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <img src="blog-logo.svg" width="50" class="me-2">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-5" style="padding-top:40px;">
+        <div class="row g-5">
+            <!-- Blog Posts -->
+            <main class="col-md-9" id="bblog-posts">
+                <div id="blog-posts">
+                    $body$
+                </div>
+            </main>
+            <!-- Sidebar -->
+            <aside class="col-md-3">
+                <div class="sidebar">
+                    <h5>About This Blog</h5>
+                    <p>Welcome to our blog where we share insights, stories, and updates.</p>
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </aside>
+            
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

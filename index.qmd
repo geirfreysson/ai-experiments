@@ -1,14 +1,23 @@
 ---
 title: "AI experiments"
 listing:
-  contents: posts
+  id: blog-posts
+  contents: 
+    - posts
+    - "!posts/index.qmd"
   sort: "date desc"
-  type: default
-  categories: true
+  categories: false
   sort-ui: false
   filter-ui: false
+  template: _templates/blog-items.ejs
 page-layout: full
 title-block-banner: true
+format:
+  html:
+    page-layout: full
+    theme: none
+    template: _templates/blog.html
+
 ---
 
 
