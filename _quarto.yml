@@ -15,8 +15,7 @@ website:
         href: https://twitter.com/geirfreysson
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    fontsize: 1.15em;
 
 
 

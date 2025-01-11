@@ -1,0 +1,23 @@
+```{=html}
+
+<% for (const item of items) { %>
+
+    <div class="blog-post">
+        <p class="blog-date"><%= item.date %></p>
+        <h4 class="blog-title"><%= item.title %></h4>
+        <p class="text-slate-700">
+            <div id="replace-with-content"></div>
+            <% if (item.abstract) { %>
+                <%= item.abstract %>
+            <% } else { %>
+                <%= item.description %>
+            <% } %>
+        </p>
+        <a href="<%= item.path %>" class="">Read More</a>
+</div>
+    <hr>
+    
+
+<% } %>
+
+```
