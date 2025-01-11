@@ -2,17 +2,14 @@ project:
   type: website
 
 website:
-  title: "AI experiments"
+  title: "Geir's notes"
+  image: blog-logo.svg
   google-analytics:
     tracking-id: "G-B8P88P732Y"
     anonymize-ip: false
   navbar:
     right:
-      - about.qmd
-      - icon: github
-        href: https://github.com/geirfreysson/ai-experiments
-      - icon: twitter
-        href: https://twitter.com/geirfreysson
+      - icon: images/blog-logo.svg
 format:
   html:
     fontsize: 1.15em;
