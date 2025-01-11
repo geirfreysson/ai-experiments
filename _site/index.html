@@ -15,6 +15,27 @@
     <title>Blog Template</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+    /* Primary color overrides */
+    a{
+        color: #D94E24 !important;
+    }
+    .text-primary {
+        color: #D94E24 !important;
+    }
+    .bg-primary {
+        background-color: #D94E24 !important;
+    }
+    .border-primary {
+        border-color: #D94E24 !important;
+    }
+    .btn-primary {
+        background-color: #D94E24 !important;
+        border-color: #D94E24 !important;
+    }
+    .btn-primary:hover {
+        background-color: #d76b2f !important;
+        border-color: #d76b2f !important;
+    }
         body {
             background-color: #ffffff;
         }
@@ -48,8 +69,20 @@
             box-shadow: none !important;
             background-color: transparent; /* Optional: Set to transparent or any color you prefer */
         }
+        .nav-item img{
+            position: relative;
+            top:10px;
+        }
         .navbar-brand {
             font-weight: 600;
+        }
+        .navbar-brand, h5, .sidebar h5{
+            font-size:1.5rem !important;
+            font-weight: 700;
+        }
+        .sidebar h6{
+            font-size: 1.125rem;
+            font-weight: 700;
         }
         .nav-link {
             color: #6c757d;
@@ -63,6 +96,13 @@
             border-top: 1px solid #d6d8db;
             opacity: 0.4;
         }
+        .container {
+            max-width: 1000px; /* Adjust the width as needed */
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
         
     </style>
 </head>
@@ -71,15 +111,12 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <span>Geir's notes</span>
+                <h5 class="anchored">Geir's notes</h5>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <img src="blog-logo.svg" width="25" class="me-2">
+                        <img src="blog-logo.svg" width="50" class="me-2">
                     </li>
                 </ul>
             </div>
@@ -108,15 +145,15 @@
                         
 
                         <div class="blog-post">
-                            <p class="blog-date">Sep 22, 2024</p>
-                            <h4 class="blog-title anchored">Having a conversation with your documents</h4>
+                            <p class="blog-date">Jan 4, 2025</p>
+                            <h4 class="blog-title anchored">Summary of https://minimaxir.com/2025/01/write-better-code/</h4>
                             <p class="text-slate-700">
                                 </p><div id="replace-with-content"></div>
                                 
-                                    If you are growing your team and are gettting lots of applications with resumés and CVs you have to trawl through them in order to find the best candiate.
+                                    When generating distinct AI voice performances, the use of prompt engineering techniques can significantly enhance the versatility and performance of GPT-4. These techniques…
                                 
                             <p></p>
-                            <a href="./posts/22-sep-2024-cv-llamaindex/index.html" class="">Read More</a>
+                            <a href="./posts/31-12-2024-auto-summarize-for-blog/summary_2025-01-04.html" class="">Read More</a>
                     </div>
                         <hr>
                         
