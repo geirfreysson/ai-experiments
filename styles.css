@@ -8,6 +8,9 @@
     position:relative;
     top:100px;
 }
+#navbarCollapse > ul > li > a > span > img{
+    width:50px;
+}
 .quarto-title{margin-top:110px;}
 h1.title{
     -webkit-text-size-adjust: 100%;
@@ -93,6 +96,9 @@ h1.title{
 .navbar{
     background-color: white;
     color: black !important;
+}
+.navbar .navbar-brand-container {
+    order: 1;
 }
 span.quarto-title-meta-contents span.date{
     color:gray !important;
@@ -469,7 +475,7 @@ a{
         color: rgb(128 132 149/var(--tw-text-opacity));
         margin-bottom: 2rem;
         margin-top: 2rem;
-        font-size: 1.2rem;
+        font-size: 1rem;
         letter-spacing: -.025em;
-        line-height: 2.5rem;
+        line-height: 1.5rem;
     }
