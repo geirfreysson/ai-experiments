@@ -156,7 +156,7 @@ a{
         font-weight: 600;
     }
     .navbar-brand, h5, .sidebar h5, .navbar .navbar-title{
-        color: #D94E24;
+        color: #D94E24 ;
         font-family: "Inter", serif;
         font-size:24px !important;
         font-weight: 700;
