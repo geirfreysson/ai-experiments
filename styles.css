@@ -4,6 +4,10 @@
 #quarto-header{
     background-color: white;
 }
+.quarto-title-block h1{
+    position:relative;
+    top:100px;
+}
 .quarto-title{margin-top:110px;}
 h1.title{
     -webkit-text-size-adjust: 100%;
