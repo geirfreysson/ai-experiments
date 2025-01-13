@@ -4,12 +4,15 @@ project:
 website:
   title: "Geir's notes"
   image: blog-logo.svg
+  search: false
   google-analytics:
     tracking-id: "G-B8P88P732Y"
     anonymize-ip: false
   navbar:
     right:
-      - icon: images/blog-logo.svg
+      - icon: blog-logo.svg
+      - text: "![](/blog-logo.svg)"
+        href: content/experience/index.qmd
 format:
   html:
     fontsize: 1.15em;
