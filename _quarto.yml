@@ -13,6 +13,7 @@ website:
 format:
   html:
     fontsize: 1.15em;
+    css: styles.css
 
 
 
