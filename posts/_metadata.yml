@@ -8,5 +8,11 @@ freeze: true
 title-block-banner: false
 title-block-style: plain
 
+toc: false
 
-toc: true
+format:
+  html:
+    template: template.html
+    template-partials: 
+      - title-block.html
+      - title-metadata.html
