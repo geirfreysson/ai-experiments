@@ -20,4 +20,10 @@ format:
 
 ---
 
+## About this site
+This is my attempt to stay up to date on all things AI, Python, and tech in general.
 
+## Meta
+
+- [About](/about.html)
+- Subscribe
