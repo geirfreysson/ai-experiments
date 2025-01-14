@@ -1,19 +1,24 @@
 ---
-title: "About"
-image: profile.jpg
+title: "About Geir's notes"
+image: about-page-illustration.png
 about:
   template: jolla
   links:
     - icon: twitter
       text: Twitter
-      href: https://twitter.com
+      href: https://twitter.com/geirfreysson
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
+      href: https://www.linkedin.com/in/geirfreysson/
     - icon: github
       text: Github
-      href: https://github.com
+      href: https://github.com/geirfreysson
 
 ---
+Hey there! 👋 
 
-About this blog
+For almost a decade I ran a small tech company creating Python solutions for the market research industry. In the summer of 2024 we were acquired - 🎉 - so now I can concentrate fully on technology insted of sales. This site is my attempt to get back into the loop on tech and stay up to date.
+
+The blog runs on Quarto, is hosted on GitHub, and every post is a Jupyter Notebook. The whole thing is open source if you want to have a spin, and the notebooks should run in Google Colab if you want to try them for yourself. 
+
+Feel free to reach out, connect, or just say hi!
