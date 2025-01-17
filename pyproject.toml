@@ -1,0 +1,18 @@
+[project]
+name = "ai-experiments"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "langchain-ollama>=0.2.2",
+    "llama-index>=0.12.10",
+    "llama-index-embeddings-langchain>=0.3.0",
+    "llama-index-llms-ollama>=0.5.0",
+    "scikit-learn>=1.6.1",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+]
