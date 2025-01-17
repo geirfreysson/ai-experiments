@@ -12,7 +12,7 @@ website:
   navbar:
     right:
       - text: "![](/blog-logo.svg)"
-        href: content/experience/index.qmd
+        href: about.qmd
 format:
   html:
     fontsize: 1.15em;

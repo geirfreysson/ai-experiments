@@ -95,6 +95,14 @@ a{
         font-weight: 700;
         line-height: 1.75rem
     }
+    .blog-title a{
+        color: black !important;
+        text-decoration: none;
+
+    }
+    .blog-title a:hover{
+        text-decoration: underline !important;
+    }
     .blog-meta {
         color: #6c757d;
         margin-bottom: 10px;
@@ -119,6 +127,22 @@ a{
     }
     .navbar-brand {
         font-weight: 600;
+    }
+    pre.command-line code, pre.command-line{
+        background-color: #444;
+        color: white;
+        padding:0.4em;
+    }
+    .wrap, pre.command-line.wrap code{
+        text-wrap: wrap !important;
+    }
+    main.content h2{
+        font-size: 1.5rem;
+        letter-spacing: -.025em;
+        line-height: 2.5rem;
+        border-bottom: none;
+        padding-bottom: 0px;
+        margin-bottom:0.5rem;
     }
     .sidebar h2{
         color: #D94E24 ;

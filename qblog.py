@@ -40,18 +40,16 @@ def fetch_website_content(url):
 
     except requests.exceptions.RequestException as e:
         raise Exception(f"Error fetching website: {e}")
-    
-
 
 
 # Function to summarize content using Ollama
 def summarize_content(content, model="llama3.1"):
     try:
-        ollama_prompt = f"Summarize the following website content in one short paragraph:\n\n{content}"
+        ollama_prompt = f"Summarize the following website content in three short sentances. The first sentance says what the topic is, the second whan this blog post and the third one the result.:\n\n{content}"
         summary = ollama.generate(model=model, prompt=ollama_prompt)
         return summary
     except Exception as e:
-        return f"Error summarizing content: {e}"
+        raise(f"Error summarizing content: {e}")
 
 # Function to create a Jupyter notebook with Quarto frontmatter
 def create_notebook(summary, url):

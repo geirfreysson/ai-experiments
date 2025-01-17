@@ -17,8 +17,10 @@ about:
 ---
 Hey there! 👋 
 
-For almost a decade I ran a small tech company creating Python solutions for the market research industry. In the summer of 2024 we were acquired - 🎉 - so now I can concentrate fully on technology insted of sales. This site is my attempt to get back into the loop on tech and stay up to date.
+For almost a decade I ran a tech company creating Python solutions for the market research industry. In the summer of 2024 we were acquired - 🎉 - so now I am concentrating fully on technology rather than sales.
 
-The blog runs on Quarto, is hosted on GitHub, and every post is a Jupyter Notebook. The whole thing is open source if you want to have a spin, and the notebooks should run in Google Colab if you want to try them for yourself. 
+The best way to learn things is to do them. This site documents my explorations into all things AI, Python, and tech in general.
+
+The blog runs on Quarto, an open-source project that turns Jupyter notebooks into a blog or news site—like Jekyll, but powered by Jupyter. The entire setup is open source, and the notebooks should run in Google Colab if you’d like to try them.
 
 Feel free to reach out, connect, or just say hi!

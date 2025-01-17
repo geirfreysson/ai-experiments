@@ -6,6 +6,7 @@ listing:
     - posts
     - "!posts/index.qmd"
   sort: "date desc"
+  max-description-length: 500
   categories: false
   sort-ui: false
   filter-ui: false
@@ -21,9 +22,9 @@ format:
 ---
 
 ## About this site
-This is my attempt to stay up to date on all things AI, Python, and tech in general.
+The best way to learn things is to do them. This site documents my explorations into all things AI, Python, and tech in general.
 
 ## Meta
 
 - [About](/about.html)
-- Subscribe
+- [Subscribe](https://docs.google.com/forms/d/e/1FAIpQLSej7F65xN4OynA7c1AkPpd41fEuyWT3_06Op5IW0mUs3TxoGg/viewform)
