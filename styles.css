@@ -45,10 +45,13 @@ h1.title{
 }
 .navbar{
     background-color: white;
-    color: black !important;
 }
+.navbar-toggler, navbar-toggler-icon, .nav-item{color:black; margin-left:auto;}
 .navbar .navbar-brand-container {
     order: 1;
+}
+span.navbar-toggler-icon{
+    background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23000000' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 span.quarto-title-meta-contents span.date{
     color:gray !important;
@@ -78,8 +81,15 @@ a{
         font-family: "Inter", serif;
         font-size:18px;
     }
+    .read-more{
+        font-size:0.9em;
+    }
+    #title-block-header + p{
+        margin-top:4rem !important;
+    }
     .blog-date {
         opacity: 0.8;
+        font-size:0.9rem;
         margin-bottom:8px;
         --tw-text-opacity: 1;
         color: rgb(100 116 139 / var(--tw-text-opacity));
@@ -121,10 +131,12 @@ a{
         box-shadow: none !important;
         background-color: transparent; /* Optional: Set to transparent or any color you prefer */
     }
+    .navbar-brand-logo img{height:50px !important; max-height:none;}
     .nav-item img{
         position: relative;
         top:10px;
     }
+    a.nav-link span{color:black !important;}
     .navbar-brand {
         font-weight: 600;
     }
