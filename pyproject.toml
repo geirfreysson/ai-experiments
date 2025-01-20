@@ -5,6 +5,8 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "great-tables>=0.15.0",
+    "jinja2>=3.1.5",
     "langchain-ollama>=0.2.2",
     "llama-index>=0.12.10",
     "llama-index-embeddings-langchain>=0.3.0",

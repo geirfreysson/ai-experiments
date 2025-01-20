@@ -3,8 +3,10 @@ project:
 
 website:
   image: blog-logo.svg
+  title: "Geir's notes"
   favicon: blog-logo.svg
   search: false
+  site-url: "https://www.geirfreysson.com"
   google-analytics:
     tracking-id: "G-B8P88P732Y"
     anonymize-ip: false
