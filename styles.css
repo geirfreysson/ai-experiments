@@ -149,6 +149,8 @@ a{
     .wrap, pre.terminal.wrap code{
         text-wrap: wrap !important;
     }
+    figcaption{font-size:0.9em; font-style:italic;}
+    figcaption a{color:#5a6570 !important;}
     main.content h2{
         font-size: 1.25rem;
         letter-spacing: -.025em;
