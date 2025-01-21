@@ -19,7 +19,7 @@ Hey there! 👋
 
 For almost a decade I ran a tech company creating Python solutions for the market research industry. In the summer of 2024 we were acquired - 🎉 - so now I am concentrating fully on technology rather than sales.
 
-The best way to learn things is to do them. This site documents my explorations into all things AI, Python, and tech in general.
+Like everyone else, what I'm primarily interested in is AI. And best way to learn things is to do them. This site documents my explorations into all things AI, Python, and tech in general.
 
 The blog runs on Quarto, an open-source project that turns Jupyter notebooks into a blog or news site—like Jekyll, but powered by Jupyter. The entire setup is open source, and the notebooks should run in Google Colab if you’d like to try them.
 
