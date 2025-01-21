@@ -141,12 +141,12 @@ a{
     .navbar-brand {
         font-weight: 600;
     }
-    pre.command-line code, pre.command-line{
+    pre.terminal code, pre.terminal{
         background-color: #f1f3f4;
         border-color: #f1f3f4;
         padding:0.4em;
     }
-    .wrap, pre.command-line.wrap code{
+    .wrap, pre.terminal.wrap code{
         text-wrap: wrap !important;
     }
     main.content h2{
@@ -245,3 +245,6 @@ table.dataframe{
 table.dataframe, table.gt_table{
     margin-bottom:2rem;
 }
+[data-tags='["code-fold"]'] + div.cell .sourceCode {
+    display:none;
+  }
