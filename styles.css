@@ -132,7 +132,7 @@ a{
         box-shadow: none !important;
         background-color: transparent; /* Optional: Set to transparent or any color you prefer */
     }
-    .navbar-brand-logo img{height:50px !important; max-height:none;}
+    .navbar-brand-logo img{height:50px; max-height:none;}
     .nav-item img{
         position: relative;
         top:10px;

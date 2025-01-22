@@ -12,6 +12,7 @@ dependencies = [
     "llama-index-embeddings-langchain>=0.3.0",
     "llama-index-llms-ollama>=0.5.0",
     "scikit-learn>=1.6.1",
+    "shot-scraper>=1.5",
 ]
 
 [dependency-groups]
