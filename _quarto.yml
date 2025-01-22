@@ -8,6 +8,8 @@ website:
   title: "Geir's notes"
   favicon: blog-logo.svg
   search: false
+  twitter-card:
+    site: "@geirfreysson"
   site-url: "https://www.geirfreysson.com"
   google-analytics:
     tracking-id: "G-B8P88P732Y"
