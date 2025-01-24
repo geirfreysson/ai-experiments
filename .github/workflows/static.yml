@@ -39,7 +39,7 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
       - name: Build documentation
-        run: quarto render
+        run: uv run quarto render
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
