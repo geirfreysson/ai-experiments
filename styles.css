@@ -62,6 +62,9 @@ a{
 .text-primary {
     color: #D94E24 !important;
 }
+code{
+    color: black;
+}
 .bg-primary {
     background-color: #D94E24 !important;
 }

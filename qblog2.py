@@ -64,13 +64,12 @@ def new(title, url, model):
     nb = nbf.v4.new_notebook()
 
     # Add the raw cell with metadata
-    metadata = f"""---\ntitle: "{title}"\ndate: "{post_date}"\nimage: "" \ncallout-appearance: simple\ncategories: []\n---\n"""
+    metadata = f"""---\ntitle: "{title}"\ndate: "{post_date}"\ndraft: "true"\npublish: "false"\nimage: "" \ncallout-appearance: simple\ncategories: []\n---\n"""
     nb.cells.append(nbf.v4.new_raw_cell(metadata))
 
     # If a URL is provided, fetch the page and summarize it
     if url:
         try:
-            import pdb; pdb.set_trace()
             response = requests.get(url)
             response.raise_for_status()
             soup = BeautifulSoup(response.text, 'html.parser')
