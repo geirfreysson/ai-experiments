@@ -92,7 +92,7 @@ def new(title, url, model):
     with open(f"{folder_name}/index.ipynb", "w") as f:
         nbf.write(nb, f)
 
-    click.echo(f"Blog post created at {folder_name}/index.ipynb")
+    click.echo(f"Blog post created at ./{folder_name}/index.ipynb")
 
 if __name__ == "__main__":
     cli()
