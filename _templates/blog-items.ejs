@@ -3,7 +3,7 @@
 
 <div class="list ">
 <% for (const item of items) { %>
-    <div class="blog-post quarto-post" <%= metadataAttrs(item) %>>
+    <div class="blog-post quarto-post" data-categories="<%= item.categories %>">
         <p class="blog-date listing-date"><%= item.date %></p>
         <h4 class="blog-title"><a href="<%= item.path %>" class="listing-title"><%= item.title %></a></h4>
         <p class="text-slate-700">
