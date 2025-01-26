@@ -23,6 +23,40 @@
     <style>
     /* Primary color overrides */
     </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      console.log('loaded')
+        function getCategoryFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const hashParams = window.location.hash.match(/category=([^&]+)/);
+            return urlParams.get("category") || (hashParams ? decodeURIComponent(hashParams[1]) : null);
+        }
+    
+        function filterListings() {
+            const selectedCategory = getCategoryFromURL();
+            console.log(selectedCategory)
+            const posts = document.querySelectorAll(".blog-post");
+    
+            posts.forEach(post => {
+                const categories = post.getAttribute("data-categories")?.split(',') || [];
+                if (!selectedCategory || categories.includes(selectedCategory)) {
+                    post.style.display = "block";
+                } else {
+                    post.style.display = "none";
+                }
+            });
+        }
+    
+        window.addEventListener("hashchange", filterListings);
+        window.addEventListener("popstate", filterListings); // Detect back/forward navigation
+        filterListings(); // Run on page load
+    });
+    </script>
+  
+  
+
+
 </head>
 <body>
     <!-- Header -->

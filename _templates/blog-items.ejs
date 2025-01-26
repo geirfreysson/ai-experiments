@@ -1,12 +1,13 @@
 ```{=html}
 
-<% for (const item of items) { %>
 
-    <div class="blog-post">
-        <p class="blog-date"><%= item.date %></p>
-        <h4 class="blog-title"><a href="<%= item.path %>"><%= item.title %></a></h4>
+<div class="list ">
+<% for (const item of items) { %>
+    <div class="blog-post quarto-post" <%= metadataAttrs(item) %>>
+        <p class="blog-date listing-date"><%= item.date %></p>
+        <h4 class="blog-title"><a href="<%= item.path %>" class="listing-title"><%= item.title %></a></h4>
         <p class="text-slate-700">
-            <div id="replace-with-content"></div>
+            <div id="replace-with-content" class="listing-abstract"></div>
             <% if (item.abstract) { %>
                 <%= item.abstract %>
             <% } else { %>
@@ -14,10 +15,12 @@
             <% } %>
         </p>
         <a href="<%= item.path %>" class="read-more">Read More</a>
-</div>
-    <hr>
+
+        <hr>
+
+    </div>
     
 
 <% } %>
-
+</div>
 ```

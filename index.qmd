@@ -7,13 +7,12 @@ listing:
     - "!posts/index.qmd"
   sort: "date desc"
   max-description-length: 500
-  categories: false
   sort-ui: false
   filter-ui: false
+  page-size: 10
+  categories: true
   template: _templates/blog-items.ejs
   feed: true
-page-layout: full
-title-block-banner: true
 format:
   html:
     page-layout: full

@@ -193,7 +193,7 @@ code{
     .nav-link:hover {
         color: #000;
     }
-    .blog-post + hr {
+    .blog-post hr {
         margin-top: 40px;
         margin-bottom: 40px;
         border-top: 1px solid #d6d8db ;
