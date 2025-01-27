@@ -33,9 +33,12 @@ def update_draft_status():
                         metadata[key] = value
                     
                     # Check date and update draft status only if publish is true
-                    if "date" in metadata and metadata.get("publish", False):
+                    if "date" in metadata:
                         post_date = datetime.strptime(metadata["date"], DATE_FORMAT).date()
-                        metadata["draft"] = post_date > today
+                        if post_date > today:
+                            metadata["draft"] = True
+                        elif metadata.get("publish", False):
+                            metadata["draft"] = False
                             
                         # Rebuild raw cell content
                         updated_raw_content = "---\n" + "\n".join(
