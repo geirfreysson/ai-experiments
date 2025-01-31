@@ -103,8 +103,4 @@ def main(base_folder):
                         click.echo(f"Shot-scraper stderr:\n{e.stderr}")
 
 if __name__ == "__main__":
-    if not os.getenv("QUARTO_PROJECT_RENDER_ALL"):
-        print("Not adding social media images")
-        exit()
-    else:
-        main()
+    main()
