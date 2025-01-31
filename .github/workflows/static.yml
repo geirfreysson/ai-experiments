@@ -36,6 +36,8 @@ jobs:
           version: "0.5.24"
       - name: UV sync
         run: uv sync --all-extras
+      - name: Install playright
+        run: uv run playwright install
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
       - name: Build documentation
