@@ -11,6 +11,7 @@ website:
   search: false
   twitter-card:
     site: "@geirfreysson"
+  open-graph: true
   site-url: "https://www.geirfreysson.com"
   google-analytics:
     tracking-id: "G-B8P88P732Y"
