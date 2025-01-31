@@ -9,11 +9,12 @@ def run_shot_scraper(url, output_folder, output_image):
     saving the output image with the specified name.
     """
     javascript_code = '''
-    document.querySelector('h1.title').style.fontSize='3em';
+    document.querySelector('h1.title').style.fontSize='2em';
     document.querySelector('.navbar-toggler-icon').style.display = 'none';
     document.querySelectorAll('section').forEach(el => el.style.display = 'none');
     document.querySelector('.navbar-brand-logo img').style.height='120px';
     document.querySelector('.quarto-title').style.marginTop='40px';
+    document.querySelector('#quarto-document-content .quarto-title-block h1').style.top = "10px";
     '''
     
     command = [
