@@ -4,6 +4,8 @@ project:
     port: 3000
   pre-render: 
     - change_future_posts_to_draft.py
+  post-render:
+    - generate_social_media_cards.py
 website:
   image: blog-logo.svg
   title: "Geir's notes"

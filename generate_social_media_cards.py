@@ -94,7 +94,7 @@ def main(base_folder):
             notebook_path = os.path.join(folder_path, "index.ipynb")
             if os.path.exists(notebook_path):
                 if not check_notebook_for_image_tag(notebook_path):
-                    image_name = f"{folder}.png"
+                    image_name = f"social-media-card.png"
                     site_url = os.path.join("_site/posts", folder, "index.html")
                     output_folder = os.path.join("./posts/", folder)
                     if run_shot_scraper(site_url, output_folder, image_name):
