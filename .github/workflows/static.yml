@@ -42,6 +42,8 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
       - name: Build documentation
         run: uv run quarto render
+      - name: Add social cards
+        run: uv run generate_social_media_cards.py .
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
