@@ -14,7 +14,12 @@ def run_shot_scraper(url, output_folder, output_image):
     document.querySelectorAll('section').forEach(el => el.style.display = 'none');
     document.querySelector('.navbar-brand-logo img').style.height='120px';
     document.querySelector('.quarto-title').style.marginTop='40px';
-    document.querySelector('#quarto-document-content .quarto-title-block h1').style.top = "10px";
+    document.querySelector('h1.title').style.top = "10px";
+    document.querySelectorAll('p').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('li').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('pre').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('hr').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('div.cell').forEach(el => el.style.display = 'none');
     '''
     
     command = [
@@ -28,7 +33,7 @@ def run_shot_scraper(url, output_folder, output_image):
         result = subprocess.run(command, check=True, capture_output=True, text=True)
         click.echo(f"Created screenshot for:https://geirfreysson.com/{url}".replace("_site/",""))
         return True
-    except subprocess.CalledProcessError as e:
+    except Exception as e:
         click.echo(f"Error executing shot-scraper: {e}", err=True)
         click.echo(f"Shot-scraper stderr:\n{e.stderr}", err=True)
         return False
