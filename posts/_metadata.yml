@@ -13,6 +13,8 @@ toc: false
 format:
   html:
     template: template.html
+    filters:
+      - social-embeds
     template-partials: 
       - title-block.html
       - title-metadata.html
