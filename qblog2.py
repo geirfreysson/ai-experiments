@@ -6,6 +6,7 @@
 #     "ollama",
 #     "nbformat",
 #     "requests",
+#     "openai",
 # ]
 # ///
 
@@ -16,9 +17,26 @@ import requests
 from bs4 import BeautifulSoup
 import ollama
 import nbformat as nbf
+import openai  # Import OpenAI for API calls
 
-# Initialize Ollama with the default model
-#ollama = Ollama(model="llama3")
+# Function to load OpenAI API key from ~/.geir
+def load_openai_api_key():
+    home = os.path.expanduser("~")
+    key_file = os.path.join(home, ".geir")
+    
+    if not os.path.exists(key_file):
+        click.echo("Error: OpenAI API key file (.geir) not found in the home directory.")
+        click.echo("Please create the file ~/.geir and add your OpenAI API key.")
+        return None
+
+    with open(key_file, "r") as f:
+        key = f.read().strip()
+
+    if not key:
+        click.echo("Error: OpenAI API key file is empty. Please add your API key to ~/.geir.")
+        return None
+
+    return key
 
 # Define the prompt template
 prompt = """
@@ -44,6 +62,27 @@ def next_sunday():
 def slugify(title):
     return "-".join(title.lower().split())
 
+def summarize_with_ollama(content, model):
+    """Use Ollama to generate a summary."""
+    response = ollama.generate(model=model, prompt=prompt + content)
+    return response['response']
+
+def summarize_with_openai(content):
+    """Use OpenAI's API to generate a summary (OpenAI v1.0.0+ format)."""
+    api_key = load_openai_api_key()
+    if not api_key:
+        return "Error: Missing OpenAI API key."
+
+    client = openai.OpenAI(api_key=api_key)  # Updated API usage
+
+    response = client.chat.completions.create(
+        model="gpt-4",
+        messages=[
+            {"role": "system", "content": "Summarize the following text:"},
+            {"role": "user", "content": prompt + content}
+        ]
+    )
+    return response.choices[0].message.content
 
 # Command to create a new blog post
 @click.group()
@@ -53,7 +92,7 @@ def cli():
 @cli.command()
 @click.argument("title")
 @click.option("--url", default=None, help="URL to fetch and summarize")
-@click.option("--model", default="llama3.1", help="What ollama model to use")
+@click.option("--model", default="llama3.1", help="Model to use: 'ollama' (default) or 'openai'")
 def new(title, url, model):
     # Create the folder name using next Sunday's date and the slugified title
     post_date = next_sunday().strftime("%Y-%m-%d")
@@ -79,11 +118,14 @@ def new(title, url, model):
                 tag.decompose()
             content = soup.get_text()
 
-            # Use Ollama to generate a summary
-            summary = ollama.generate(model=model, prompt=prompt + content)
-            
+            # Choose model for summarization
+            if model.lower() == "openai":
+                summary = summarize_with_openai(content)
+            else:
+                summary = summarize_with_ollama(content, model)
+
             # Add the summary as a markdown cell
-            nb.cells.append(nbf.v4.new_markdown_cell(summary['response']))
+            nb.cells.append(nbf.v4.new_markdown_cell(summary))
 
         except requests.exceptions.RequestException as e:
             click.echo(f"Error fetching the URL: {e}")
