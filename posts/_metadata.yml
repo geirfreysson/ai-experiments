@@ -15,6 +15,7 @@ format:
     template: template.html
     filters:
       - social-embeds
+      - line-highlight
     template-partials: 
       - title-block.html
       - title-metadata.html
