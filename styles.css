@@ -228,6 +228,7 @@ section pre.sourceCode{
     background-color: rgb(250,250,250);
     border-color: rgb(250,250,250);
     border-left: 3px solid green;
+    overflow-x:auto !important;
 }
 section pre{
     border-radius:1em;
@@ -253,3 +254,15 @@ table.dataframe, table.gt_table{
 [data-tags='["code-fold"]'] + div.cell .sourceCode {
     display:none;
   }
+
+div.sourceCode pre code.has-line-highlights > span:not(.highlight-line){
+    opacity: 1 !important;
+}
+.highlight-line{
+    display: inline-block;
+    width:100%;
+    background-color: rgba(255,255,0,0.6);
+}
+.highlight-line{
+    font-weight: normal !important;
+}
