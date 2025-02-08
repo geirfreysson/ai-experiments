@@ -21,6 +21,7 @@ def run_shot_scraper(url, output_folder, output_image):
     document.querySelectorAll('pre').forEach(el => el.style.display = 'none');
     document.querySelectorAll('hr').forEach(el => el.style.display = 'none');
     document.querySelectorAll('div.cell').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('div.callout').forEach(el => el.style.display = 'none');
     '''
     
     command = [
