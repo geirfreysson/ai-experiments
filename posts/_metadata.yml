@@ -13,6 +13,7 @@ toc: false
 format:
   html:
     template: template.html
+    html-table-processing: none
     filters:
       - social-embeds
       - line-highlight
