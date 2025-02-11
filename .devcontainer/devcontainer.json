@@ -1,0 +1,6 @@
+{
+    "name": "Codespace with Quarto",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "postCreateCommand": "wget https://quarto.org/download/latest/quarto-linux-amd64.deb && sudo apt-get install -y ./quarto-linux-amd64.deb && rm quarto-linux-amd64.deb",
+    "features": {}
+  }
