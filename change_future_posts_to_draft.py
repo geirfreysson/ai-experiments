@@ -25,7 +25,8 @@ def update_draft_status():
                     for line in metadata_lines:
                         key, value = line.split(":", 1)
                         key = key.strip()
-                        value = value.strip().strip('"')
+                        if key in ["draft", "publish", "date"]:
+                            value = value.strip().strip('"')
                         #if key == "categories":
                         #    value = [cat.strip() for cat in value.strip("[]").split(",")]
                         if key == "draft" or key == "publish":
