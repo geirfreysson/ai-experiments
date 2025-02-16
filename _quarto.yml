@@ -13,9 +13,6 @@ website:
     site: "@geirfreysson"
   open-graph: true
   site-url: "https://www.geirfreysson.com"
-  google-analytics:
-    tracking-id: "G-B8P88P732Y"
-    anonymize-ip: false
   navbar:
     logo: blog-logo.svg
     right:
