@@ -230,7 +230,8 @@ code{
         letter-spacing: -.025em;
         line-height: 1.5rem;
     }
-
+    img.img-center{text-align: center; display: block; margin-left: auto; margin-right: auto;}
+    img.h100{height:100px;}
 
 section pre.sourceCode{
     background-color: rgb(250,250,250);
