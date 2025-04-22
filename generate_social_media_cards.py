@@ -108,7 +108,7 @@ def main(base_folder):
                     if run_shot_scraper(site_url, output_folder, image_name):
                         update_notebook_image_tag(notebook_path, image_name)
                     else:
-                        click.echo(f"Shot-scraper stderr:\n{e.stderr}")
+                        click.echo(f"Shot-scraper error.")
 
 if __name__ == "__main__":
     main()
