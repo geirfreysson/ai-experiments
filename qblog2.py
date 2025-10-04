@@ -40,13 +40,12 @@ def load_openai_api_key():
 
 # Define the prompt template
 prompt = """
-I will provide a block of HTML content extracted using Beautiful Soup.
+Please read the block of HTML content and write a short, casual summary of the blog post in three parts:
+	1.	Start with one friendly sentence that sets up the overall theme or vibe of the post (what it’s really about).
+	2.	Then give a couple of sentences explaining what the post walks through or explores, written in a conversational way (as if you were telling a colleague what the post covers).
+	3.	End with one final sentence that sums up the takeaway or conclusion, keeping the tone light and blog-friendly.
 
-Please provide a **concise three-sentence summary** of the blog post:
-1. The first sentence should describe the **theme** of the blog post.
-2. The second sentence should explain **what the post outlines or covers**.
-3. The third sentence should describe the **result or conclusion** of the blog post.
-
+Keep the sentences clear and punchy, and feel free to use line breaks so it doesn’t end up looking like one big wall of text.
 HTML content:
 """
 
@@ -76,7 +75,7 @@ def summarize_with_openai(content):
     client = openai.OpenAI(api_key=api_key)  # Updated API usage
 
     response = client.chat.completions.create(
-        model="gpt-4",
+        model="gpt-4o",
         messages=[
             {"role": "system", "content": "Summarize the following text:"},
             {"role": "user", "content": prompt + content}
@@ -92,7 +91,7 @@ def cli():
 @cli.command()
 @click.argument("title")
 @click.option("--url", default=None, help="URL to fetch and summarize")
-@click.option("--model", default="llama3.1", help="Model to use: 'ollama' (default) or 'openai'")
+@click.option("--model", default="openai", help="Model to use: 'ollama' (default) or 'openai'")
 def new(title, url, model):
     # Create the folder name using next Sunday's date and the slugified title
     post_date = next_sunday().strftime("%Y-%m-%d")
