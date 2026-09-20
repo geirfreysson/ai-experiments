@@ -83,38 +83,6 @@ code{
         background-color: #ffffff;
         font-family: "Inter", serif;
         font-size:18px;
-        overflow-x: hidden;
-        position: relative;
-    }
-    #ambient-grid {
-        display: block;
-        height: min(72vh, 720px);
-        inset: 0 0 auto;
-        pointer-events: none;
-        position: absolute;
-        width: 100%;
-        z-index: 0;
-        -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 62%, transparent 100%);
-        mask-image: linear-gradient(to bottom, #000 0%, #000 62%, transparent 100%);
-    }
-    body > nav.navbar,
-    body > .container {
-        position: relative;
-        z-index: 1;
-    }
-    nav.navbar.bg-white {
-        background-color: rgba(255, 255, 255, 0.82) !important;
-    }
-    @media (prefers-reduced-motion: reduce), (max-width: 639px) {
-        #ambient-grid {
-            opacity: 0.72;
-        }
-    }
-
-    @keyframes home-grid-enter {
-        from {
-            opacity: 0;
-        }
     }
 
     @keyframes page-content-enter {
@@ -122,10 +90,6 @@ code{
             opacity: 0;
             transform: translate3d(0, 4px, 0);
         }
-    }
-
-    html.page-entering #ambient-grid {
-        animation: home-grid-enter 700ms ease-out both;
     }
 
     html.page-entering body > nav.navbar {
@@ -173,7 +137,6 @@ code{
     }
 
     @media (prefers-reduced-motion: reduce) {
-        html.page-entering #ambient-grid,
         html.page-entering body > nav.navbar,
         html.page-entering .sidebar,
         html.page-entering #listing-blog-posts > .list > .blog-post,
