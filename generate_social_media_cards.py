@@ -10,6 +10,7 @@ def run_shot_scraper(url, output_folder, output_image):
     """
     javascript_code = '''
     document.documentElement.classList.remove('page-entering');
+    document.querySelectorAll('#quarto-document-content > :not(#title-block-header)').forEach(el => el.style.display = 'none');
     document.querySelector('h1.title').style.fontSize='2em';
     document.querySelector('.navbar-toggler-icon').style.display = 'none';
     document.querySelectorAll('section').forEach(el => el.style.display = 'none');
