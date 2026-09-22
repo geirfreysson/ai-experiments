@@ -1,26 +1,21 @@
 ```{=html}
-
-
-<div class="list ">
-<% for (const item of items) { %>
-    <div class="blog-post quarto-post" data-categories="<%= item.categories %>">
-        <p class="blog-date listing-date"><%= item.date %></p>
-        <h4 class="blog-title"><a href="<%= item.path %>" class="listing-title"><%= item.title %></a></h4>
-        <p class="text-slate-700">
-            <div id="replace-with-content" class="listing-abstract"></div>
-            <% if (item.abstract) { %>
-                <%= item.abstract %>
-            <% } else { %>
-                <%= item.description %>
-            <% } %>
-        </p>
-        <a href="<%= item.path %>" class="read-more">Read More</a>
-
-        <hr>
-
+<div class="list">
+<% items.forEach((item, idx) => { %>
+    <% const number = String(items.length - idx).padStart(2, '0'); %>
+    <div class="listing-row" data-categories="<%= item.categories %>">
+        <span class="listing-meta-line">
+            <span class="listing-number">Note #<%= number %></span>
+            <span class="listing-date">- <%= item.date %></span>
+        </span>
+        <% if (item.categories && item.categories.length) { %>
+        <span class="listing-tags">
+        <% item.categories.forEach((cat, i) => { %><% if (i > 0) { %><span class="tag-dot">&bull;</span><% } %><a href="#category=<%= encodeURIComponent(cat) %>" class="tag-link" data-category="<%= cat %>"><%= cat %></a><% }); %>
+        </span>
+        <% } %>
+        <a href="<%= item.path %>" class="listing-title-link">
+            <span class="listing-title"><%= item.title %></span>
+        </a>
     </div>
-    
-
-<% } %>
+<% }); %>
 </div>
 ```

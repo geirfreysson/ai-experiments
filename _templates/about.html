@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="$lang$" xml:lang="$lang$"$if(dir)$ dir="$dir$"$endif$>
+
+<head>
+
+<script>
+(() => {
+  const root = document.documentElement;
+  root.classList.add("page-entering");
+
+  window.addEventListener("DOMContentLoaded", () => {
+    window.setTimeout(() => {
+      root.classList.remove("page-entering");
+    }, 1250);
+  }, { once: true });
+})();
+</script>
+
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Geir's notes" />
+<link rel="manifest" href="/favicon/site.webmanifest" />
+
+$metadata.html()$
+
+<style>
+$styles.html()$
+</style>
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+$for(css)$
+<link rel="stylesheet" href="$css$" />
+$endfor$
+</head>
+
+<body>
+
+<header class="site-header">
+    <a href="/index.html" class="site-brand">
+        <img src="/blog-logo.svg" alt="" class="site-logo">
+        <span class="site-wordmark">geir's notes<span class="site-wordmark-cursor">_</span></span>
+    </a>
+    <span class="site-crumb">notes / about</span>
+    <nav class="site-nav">
+        <a href="/index.html">index</a>
+        <a href="/index.xml">rss</a>
+    </nav>
+</header>
+
+$for(include-before)$
+$include-before$
+$endfor$
+
+<div class="about-hero">
+    <img src="/about-page-illustration.png" alt="Illustration of Geir" class="about-avatar">
+    <h1 class="about-heading">$title$</h1>
+    <div class="about-links">
+        <a href="https://twitter.com/geirfreysson">twitter</a>
+        <a href="https://www.linkedin.com/in/geirfreysson/">linkedin</a>
+        <a href="https://github.com/geirfreysson">github</a>
+    </div>
+</div>
+
+$body$
+
+$for(include-after)$
+$include-after$
+$endfor$
+
+</body>
+
+</html>

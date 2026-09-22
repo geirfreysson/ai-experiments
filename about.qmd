@@ -1,26 +1,19 @@
 ---
 title: "About Geir's notes"
 image: about-page-illustration.png
-about:
-  template: jolla
-  links:
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/geirfreysson
-    - icon: linkedin
-      text: LinkedIn
-      href: https://www.linkedin.com/in/geirfreysson/
-    - icon: github
-      text: Github
-      href: https://github.com/geirfreysson
-
+format:
+  html:
+    template: _templates/about.html
 ---
-Hey there! 👋 
 
-For almost a decade I ran a tech company creating Python solutions for the market research industry. In the summer of 2024 we were acquired - 🎉 - so now I am concentrating fully on technology rather than sales.
+::: {.about-bio}
+Hey there. For almost a decade I ran a tech company creating Python solutions for the market research industry. In the summer of 2024 we were acquired, so now I am concentrating fully on technology rather than sales.
 
 Like everyone else, what I'm primarily interested in is AI. And the best way to learn things is to do them. This site documents my explorations into all things AI, Python, and tech in general.
 
-The blog runs on Quarto, an open-source project that turns Jupyter notebooks into a blog or news site—like Jekyll, but powered by Jupyter. The entire setup is open source, and the notebooks should run in Google Colab if you’d like to try them.
+Feel free to reach out, connect, or just say hi.
+:::
 
-Feel free to reach out, connect, or just say hi!
+::: {.about-colophon}
+The blog runs on [Quarto](https://quarto.org), an open-source project that turns Jupyter notebooks into a blog — like Jekyll, but powered by Jupyter. The entire setup is [open source](https://github.com/geirfreysson/ai-experiments), and the notebooks should run in Google Colab if you'd like to try them.
+:::

@@ -9,6 +9,7 @@ title-block-banner: false
 title-block-style: plain
 
 toc: false
+date-format: "long"
 
 format:
   html:
@@ -17,6 +18,5 @@ format:
     filters:
       - social-embeds
       - line-highlight
-    template-partials: 
+    template-partials:
       - title-block.html
-      - title-metadata.html

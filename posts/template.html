@@ -22,6 +22,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
 <meta name="apple-mobile-web-app-title" content="Geir's notes" />
 <link rel="manifest" href="/favicon/site.webmanifest" />
+$if(date-meta)$
+<meta name="dcterms.date" content="$date-meta$" />
+$endif$
 
 $metadata.html()$
 
@@ -75,6 +78,17 @@ $endfor$
 
 <body>
 
+<header class="site-header">
+    <a href="/index.html" class="site-brand">
+        <img src="/blog-logo.svg" alt="" class="site-logo">
+        <span class="site-wordmark">geir's notes<span class="site-wordmark-cursor">_</span></span>
+    </a>
+    <nav class="site-nav">
+        <a href="/about.html">about</a>
+        <a href="/index.xml">rss</a>
+    </nav>
+</header>
+
 $for(include-before)$
 $include-before$
 $endfor$
@@ -99,12 +113,15 @@ $elseif(keywords)$
 $title-block.html()$
 $endif$
 
-
 $if(toc)$
 $toc.html()$
 $endif$
 
 $body$
+
+<div class="post-footer">
+    <a href="/index.html" class="post-footer-back">&larr; index</a>
+</div>
 
 $for(include-after)$
 $include-after$

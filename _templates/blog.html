@@ -16,12 +16,6 @@
         }, { once: true });
     })();
     </script>
-    <!--
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="icon" href="/blog-logo.svg" type="image/svg+xml">
-    -->
 
     <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
@@ -30,82 +24,54 @@
     <meta name="apple-mobile-web-app-title" content="Geir's notes" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
-    <style>
-    /* Primary color overrides */
-    </style>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-      console.log('loaded')
         function getCategoryFromURL() {
-            const urlParams = new URLSearchParams(window.location.search);
             const hashParams = window.location.hash.match(/category=([^&]+)/);
-            return urlParams.get("category") || (hashParams ? decodeURIComponent(hashParams[1]) : null);
+            return hashParams ? decodeURIComponent(hashParams[1]) : null;
         }
-    
+
         function filterListings() {
-            const selectedCategory = getCategoryFromURL();
-            console.log(selectedCategory)
-            const posts = document.querySelectorAll(".blog-post");
-    
-            posts.forEach(post => {
-                const categories = post.getAttribute("data-categories")?.split(',') || [];
-                if (!selectedCategory || categories.includes(selectedCategory)) {
-                    post.style.display = "block";
-                } else {
-                    post.style.display = "none";
-                }
+            const selected = getCategoryFromURL();
+            document.querySelectorAll(".listing-row").forEach((row) => {
+                const categories = (row.getAttribute("data-categories") || "").split(",").map((c) => c.trim());
+                row.classList.toggle("is-hidden", Boolean(selected) && !categories.includes(selected));
+            });
+            document.querySelectorAll(".tag-link").forEach((link) => {
+                link.classList.toggle("active", link.dataset.category === selected);
             });
         }
-    
-        window.addEventListener("hashchange", filterListings);
-        window.addEventListener("popstate", filterListings); // Detect back/forward navigation
-        filterListings(); // Run on page load
-    });
-    </script>
-  
-  
 
+        window.addEventListener("hashchange", filterListings);
+        filterListings();
+    });
+</script>
 
 </head>
 <body>
-    <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <div class="blog-site-name" style="margin-top:2px;">Geir’s notes</div>
-            </a>
-            <div class="" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <img src="blog-logo.svg" width="50" class="me-2">
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Main Content -->
-    <div class="container my-5" style="padding-top:40px;">
-        <div class="row g-5">
-            <!-- Blog Posts -->
-            <main class="col-md-8" id="bblog-posts">
-                <div id="blog-posts">
-                    $body$
-                </div>
-            </main>
-            <!-- Sidebar -->
-            <aside class="col-md-4">
-                <div class="sidebar">
-                    $body$
-                </div>
-            </aside>
-            
+    <header class="site-header">
+        <a href="/index.html" class="site-brand">
+            <img src="/blog-logo.svg" alt="" class="site-logo">
+            <span class="site-wordmark">geir's notes<span class="site-wordmark-cursor">_</span></span>
+        </a>
+        <nav class="site-nav">
+            <a href="/about.html">about</a>
+            <a href="/index.xml">rss</a>
+        </nav>
+    </header>
+
+    <div class="hero-row">
+        <div class="hero-blurb">
+            $body$
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="listing-wrap">
+        <div id="blog-posts"></div>
+    </div>
+
 </body>
 </html>

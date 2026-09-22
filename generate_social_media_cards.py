@@ -12,10 +12,10 @@ def run_shot_scraper(url, output_folder, output_image):
     document.documentElement.classList.remove('page-entering');
     document.querySelectorAll('#quarto-document-content > :not(#title-block-header)').forEach(el => el.style.display = 'none');
     document.querySelector('h1.title').style.fontSize='2em';
-    document.querySelector('.navbar-toggler-icon').style.display = 'none';
     document.querySelectorAll('section').forEach(el => el.style.display = 'none');
-    document.querySelector('.navbar-brand-logo img').style.height='140px';
-    document.querySelector('.navbar-brand-logo').style.marginTop='10px';
+    document.querySelector('.site-logo').style.height='60px';
+    document.querySelector('.site-logo').style.width='60px';
+    document.querySelector('.site-brand').style.marginTop='10px';
     document.querySelector('.quarto-title').style.marginTop='40px';
     document.querySelector('h1.title').style.top = "10px";
     document.querySelectorAll('p').forEach(el => el.style.display = 'none');
