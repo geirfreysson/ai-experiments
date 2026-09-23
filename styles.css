@@ -20,6 +20,9 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
 body {
     background-color: #ffffff;
     font-family: var(--mono);
@@ -27,6 +30,7 @@ body {
     line-height: 1.65;
     color: var(--body-ink);
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
 .d-none,
@@ -286,6 +290,7 @@ p.post-dek {
 }
 
 #quarto-document-content {
+    width: 100%;
     max-width: 808px;
     min-width: 0;
     margin: 0 auto;
