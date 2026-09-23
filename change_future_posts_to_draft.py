@@ -44,13 +44,16 @@ def update_draft_status():
         else:
             new_draft = current_draft
 
-        if new_draft is None or new_draft == current_draft:
+        if new_draft is None or (current_draft or "").lower() == new_draft.lower():
             continue
 
         # Patch only the draft line in place, preserving every other line
         # (including nested keys like execute/freeze) exactly as written.
+        # Written as an unquoted YAML boolean: a quoted "false" is a
+        # non-empty string, which Quarto's draft check treats as truthy
+        # and hides the post from listings.
         updated_lines = [
-            f'draft: "{new_draft}"' if line.startswith("draft:") else line
+            f'draft: {new_draft}' if line.startswith("draft:") else line
             for line in lines
         ]
         nb.cells[0].source = "\n".join(updated_lines)
