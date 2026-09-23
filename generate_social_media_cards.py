@@ -53,21 +53,28 @@ def update_notebook_image_tag(notebook_path, image_name):
             lines = metadata.split("\n")
             new_lines = []
             image_tag_found = False
-            
+
             for line in lines:
                 if line.strip().startswith("image:"):
                     new_lines.append(f"image: \"{image_name}\"")
                     image_tag_found = True
                 else:
                     new_lines.append(line)
-            
-            # Ensure the image tag is added as the second-to-last line
+
+            # Insert the image tag just before the closing "---" delimiter,
+            # not merely at the second-to-last line (which may be a trailing
+            # blank line left over from a trailing newline in the source).
             if not image_tag_found:
-                if len(new_lines) > 0:
-                    new_lines.insert(len(new_lines) - 1, f"image: \"{image_name}\"")
+                closing_idx = None
+                for idx in range(len(new_lines) - 1, -1, -1):
+                    if new_lines[idx].strip() == "---":
+                        closing_idx = idx
+                        break
+                if closing_idx is not None:
+                    new_lines.insert(closing_idx, f"image: \"{image_name}\"")
                 else:
                     new_lines.append(f"image: \"{image_name}\"")
-            
+
             notebook.cells[0].source = "\n".join(new_lines)
             
         with open(notebook_path, 'w', encoding='utf-8') as f:
