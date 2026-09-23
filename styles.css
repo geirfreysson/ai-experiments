@@ -165,12 +165,12 @@ code {
     color: var(--muted);
 }
 .listing-tags {
+    display: none;
     font-family: var(--mono);
     font-size: 12px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--muted);
-    display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 0.5em;
