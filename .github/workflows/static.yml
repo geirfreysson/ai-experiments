@@ -44,6 +44,8 @@ jobs:
         run: uv run quarto render --profile production
       - name: Add social cards
         run: uv run generate_social_media_cards.py .
+      - name: Clear render cache before re-render
+        run: rm -rf .quarto
       - name: Re-render with social media cards available
         run: uv run quarto render --profile production
       - name: Setup Pages
