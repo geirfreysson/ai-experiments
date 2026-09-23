@@ -287,12 +287,14 @@ p.post-dek {
 
 #quarto-document-content {
     max-width: 808px;
+    min-width: 0;
     margin: 0 auto;
     padding: 32px 24px 0;
     font-family: var(--mono);
     font-size: 15px;
     line-height: 1.65;
     color: var(--body-ink);
+    overflow-wrap: break-word;
 }
 #quarto-document-content > header#title-block-header {
     max-width: none;
@@ -471,6 +473,10 @@ html.page-entering #quarto-document-content {
 }
 
 /* ---- Misc content utilities ---- */
+img {
+    max-width: 100%;
+    height: auto;
+}
 img.img-center {
     text-align: center;
     display: block;
