@@ -570,6 +570,13 @@ div.sourceCode pre code.has-line-highlights > span:not(.highlight-line) {
 }
 
 @media (max-width: 639px) {
+    /* Quarto's page-columns grid (used on post/about pages) adds its own
+       1.5em side gutter on top of #quarto-document-content's own padding,
+       double-indenting post/about content vs. the header logo. Collapse it
+       to a single track so our own padding is the only inset. */
+    #quarto-content.page-columns {
+        grid-template-columns: minmax(0, 1fr);
+    }
     .site-header {
         flex-wrap: wrap;
         padding: 24px 20px 20px;
